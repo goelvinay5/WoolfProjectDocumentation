@@ -1,1 +1,34 @@
-[![](https://mermaid.ink/img/pako:eNp1U9tymzAQ_RWNnpMfsGc6Yy5x4kDjmvalwg-LtAZNQHJ0ScdN8u8VMBTXbvTAaDkXlqPVG-VaIF3Q2sCxId-TZalIWCu22j6QNTj8Bac9ub398r7T3qElO3zxaJ19JxGLwThSoHmVHPeTsieTmD0ZgYbkoKDGDtUnvIRtjRaeOxKDg1bX_6elbAunz13u2Fft5EFycFKrS874jIaf-GExdL5muVa1TqKJEp-B9yw_Fd-yCUrOoAeWtmCd5BbB8GaipAOlQCUsSV9Dl4G6YY9weAaSo7UhARIZ_YxmUtwNirQD2QbuI1t18LtvPC16xsixvhoPJdMgSAQtKI7GjmC_MpZm0X6sw7fHTTYEsrp2iYE3UtWzPGc7FNJeGuSDQXRtkIQDqiDkMFvcL-f9enlmdCH9N4RZs7nWbIZktr5qpW36zOPlOVD4ynIjqx5JA0JvaIcm5CjCDL_1zJK6JgxcSRdhK_AAvnUlLdVHoIJ3ujgpThfOeLyhRvu6oYsDtDZU_ijCvCcSQtPd37dHUD-1nuuQmdMmH2_NcHk-_gBTOwPR?type=png)](https://mermaid.live/edit#pako:eNp1U9tymzAQ_RWNnpMfsGc6Yy5x4kDjmvalwg-LtAZNQHJ0ScdN8u8VMBTXbvTAaDkXlqPVG-VaIF3Q2sCxId-TZalIWCu22j6QNTj8Bac9ub398r7T3qElO3zxaJ19JxGLwThSoHmVHPeTsieTmD0ZgYbkoKDGDtUnvIRtjRaeOxKDg1bX_6elbAunz13u2Fft5EFycFKrS874jIaf-GExdL5muVa1TqKJEp-B9yw_Fd-yCUrOoAeWtmCd5BbB8GaipAOlQCUsSV9Dl4G6YY9weAaSo7UhARIZ_YxmUtwNirQD2QbuI1t18LtvPC16xsixvhoPJdMgSAQtKI7GjmC_MpZm0X6sw7fHTTYEsrp2iYE3UtWzPGc7FNJeGuSDQXRtkIQDqiDkMFvcL-f9enlmdCH9N4RZs7nWbIZktr5qpW36zOPlOVD4ynIjqx5JA0JvaIcm5CjCDL_1zJK6JgxcSRdhK_AAvnUlLdVHoIJ3ujgpThfOeLyhRvu6oYsDtDZU_ijCvCcSQtPd37dHUD-1nuuQmdMmH2_NcHk-_gBTOwPR)
+graph TD;
+    A[API Gateway] -->|Routes Requests| B[Cart Service];
+    A --> C[Order Management Service];
+    A --> D[Product Catalog Service];
+    A --> E[Payment Service];
+    A --> F[Notification Service];
+    
+    B -->|Uses| G[MongoDB];
+    C -->|Uses| H[MySQL];
+    D -->|Uses| I[Elasticsearch];
+    E -->|Sends Events| J[Kafka Message Broker];
+    F -->|Emails| K[Amazon SES];
+
+    subgraph Load Balancers
+        L[ELB]
+    end
+    L --> A;
+
+    subgraph Caching
+        M[Redis]
+    end
+    M --> B;
+
+    subgraph Databases
+        H;
+        G;
+    end
+
+    subgraph Message Broker
+        J;
+    end
+
+    J -->|Publishes| C;
+    J -->|Subscribes| E;

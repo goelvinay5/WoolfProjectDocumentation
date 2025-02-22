@@ -10,16 +10,16 @@ Vinay Goel
 partial fulfillment of the requirements for the degree of Master of
 Science in Computer Science**
 
-October, 2024
+March, 2025
 
 ![](./image2.png){width="2.4166666666666665in"
 height="1.359375546806649in"}
 
-**Scaler Mentee Email ID :** goel.vinay5@gmail.com
+**Scaler Mentee Email ID:** goel.vinay5@gmail.com
 
-**Thesis Supervisor :** Naman Bhalla
+**Thesis Supervisor:** Naman Bhalla
 
-**Date of Submission :** 15/03/2025
+**Date of Submission:** 15/03/2025
 
 **Certification**
 
@@ -89,7 +89,7 @@ motivated me to complete the program and earn the Master's degree**
 
 [**References 14**](#references)
 
-## List of Tables
+## List of Tables {#list-of-tables .unnumbered}
 
 > **(To be written sequentially as they appear in the text)**
 
@@ -102,7 +102,7 @@ motivated me to complete the program and earn the Master's degree**
   **2**                                                    
   --------- ---------------------------------------------- --------------
 
-## List of Figures
+## List of Figures {#list-of-figures .unnumbered}
 
 **(List of Images, Graphs, Charts sequentially as they appear in the
 text)**
@@ -116,138 +116,85 @@ text)**
   **2**                                                     
   ---------- ---------------------------------------------- --------------
 
-## Applied Software Project
+## Applied Software Project {#applied-software-project .unnumbered}
 
 ### Abstract
 
-### This project describes the design and implementation of a scalable and high-performance e-commerce platform based on a microservices architecture. The main goal is to give users an uninterrupted online shopping experience with high availability, security, and best performance. The platform includes key e-commerce features such as user management, browsing the product catalog, shopping cart management, order processing, and secure payment processing.
+### This project describes the design and implementation of a scalable and high-performance e-commerce platform based on a microservices architecture. The main goal is to give users an uninterrupted online shopping experience with high availability, security, and best performance. The platform includes key e-commerce features such as user management, browsing the product catalogue, shopping cart management, order processing, and secure payment processing. {#this-project-describes-the-design-and-implementation-of-a-scalable-and-high-performance-e-commerce-platform-based-on-a-microservices-architecture.-the-main-goal-is-to-give-users-an-uninterrupted-online-shopping-experience-with-high-availability-security-and-best-performance.-the-platform-includes-key-e-commerce-features-such-as-user-management-browsing-the-product-catalogue-shopping-cart-management-order-processing-and-secure-payment-processing. .unnumbered}
 
-### In order to improve system scalability and efficiency, the architecture utilizes new cloud-based technologies like load balancers for request distribution, an API Gateway for routing, and Kafka for asynchronous messaging. The backend services make use of relational (MySQL) and NoSQL (MongoDB) databases to store structured data and flexible data, respectively. Elasticsearch is incorporated in the product catalog service to support real-time search functionality with features such as typo correction. Also, Redis caching preloads highly accessed data to minimize latency when retrieving shopping carts.
+### In order to improve system scalability and efficiency, the architecture utilizes new cloud-based technologies like load balancers for request distribution, an API Gateway for routing, and Kafka for asynchronous messaging. The backend services make use of relational (MySQL) and NoSQL (MongoDB) databases to store structured data and flexible data, respectively. Elasticsearch is incorporated in the product catalogue service to support real-time search functionality with features such as typo correction. Also, Redis caching preloads highly accessed data to minimize latency when retrieving shopping carts. {#in-order-to-improve-system-scalability-and-efficiency-the-architecture-utilizes-new-cloud-based-technologies-like-load-balancers-for-request-distribution-an-api-gateway-for-routing-and-kafka-for-asynchronous-messaging.-the-backend-services-make-use-of-relational-mysql-and-nosql-mongodb-databases-to-store-structured-data-and-flexible-data-respectively.-elasticsearch-is-incorporated-in-the-product-catalogue-service-to-support-real-time-search-functionality-with-features-such-as-typo-correction.-also-redis-caching-preloads-highly-accessed-data-to-minimize-latency-when-retrieving-shopping-carts. .unnumbered}
 
-### This system is architecturally designed to sustain high traffic loads and deliver a stable user experience via secure authentication, effective session management, and live order tracking. Independent scaling of services is made possible by the microservices-based model, making modifications and future development easy. Integrating contemporary software engineering practices and distributed computing concepts, this project helps shape the field of scalable and reliable e-commerce solutions. The suggested architecture can be utilized across sectors in order to enhance online retail businesses, streamline order fulfilment processes, and increase customer interaction through targeted shopping experiences.
+### This system is architecturally designed to sustain high traffic loads and deliver a stable user experience via secure authentication, effective session management, and live order tracking. Independent scaling of services is made possible by the microservices-based model, making modifications and future development easy. Integrating contemporary software engineering practices and distributed computing concepts, this project helps shape the field of scalable and reliable e-commerce solutions. The suggested architecture can be utilized across sectors in order to enhance online retail businesses, streamline order fulfilment processes, and increase customer interaction through targeted shopping experiences. {#this-system-is-architecturally-designed-to-sustain-high-traffic-loads-and-deliver-a-stable-user-experience-via-secure-authentication-effective-session-management-and-live-order-tracking.-independent-scaling-of-services-is-made-possible-by-the-microservices-based-model-making-modifications-and-future-development-easy.-integrating-contemporary-software-engineering-practices-and-distributed-computing-concepts-this-project-helps-shape-the-field-of-scalable-and-reliable-e-commerce-solutions.-the-suggested-architecture-can-be-utilized-across-sectors-in-order-to-enhance-online-retail-businesses-streamline-order-fulfilment-processes-and-increase-customer-interaction-through-targeted-shopping-experiences. .unnumbered}
 
 ### Project Description
 
-Introduction
+1.  Introduction
 
 Digital commerce has revolutionized the interaction between consumers
 and businesses, with e-commerce sites becoming a core component of
 contemporary trade. The goal of this project is to create a scalable and
 feature-loaded e-commerce website that facilitates effortless online
 transactions. The site will include features like user authentication,
-browsing of a product catalog, management of shopping carts, order
+browsing of a product catalogue, management of shopping carts, order
 placement, and secure payment.
 
-Objectives
+2.  Objectives
 
 The major objectives of the project are:
 
-• To develop and deploy a secure multi-user e-commerce platform.
+-   To develop and deploy a secure multi-user e-commerce platform.
 
-• To achieve a secure and scalable microservices architecture.
+-   To achieve a secure and scalable microservices architecture.
 
-• To include search and filtering functionalities for improved shopping.
+-   To include search and filtering functionalities for improved
+    shopping.
 
-• To implement a efficient order management process, including
-notifications and tracking.
+-   To implement an efficient order management process, including
+    notifications and tracking.
 
-• To make database performance efficient through Redis caching and
-Elasticsearch search indexing.
+-   To make database performance efficient through Redis caching and
+    Elasticsearch search indexing.
 
-• To enable secure payments through payment gateway integration.
+-   To enable secure payments through payment gateway integration.
 
-Project Flow
+    1.  Project Flow
 
 The development process is in accordance with agile methodologies with
 iterative enhancements. Following is the development life cycle:
 
-Project Development Process
+![](./image3.png){width="6.5in" height="3.25in"}+-
 
-+\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\--+
-+\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\--+
+**Figure 2.3.1**: Project Development Process
 
-\| Definition \| \-\-\-\--\> \| Planning \| \-\-\-\--\> \| Development
-\| \-\-\-\--\> \| Delivery \|
-
-+\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\--+
-+\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\--+
-
-\| \| \| \|
-
-V V V V
-
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-
-\| Project Theme \| \| Idea Presentation\| \| Sprint Planning\| \| Final
-Demo \|
-
-\| Selection \| \| & Pitch \| \| & Development \| \| & Report \|
-
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-
-\| \| \| \|
-
-V V V V
-
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-
-\| Design Sprint \| \| Product Backlog \| \| Code Review \| \|
-Reflection on \|
-
-\| & Research \| \| & User Stories \| \| & Debugging \| \| Process \|
-
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-
-\| \| \| \|
-
-V V V V
-
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-
-\| Personas Study\| \| Dev Environment \| \| Testing & QA \| \|
-Deployment \|
-
-\| & Problem \| \| Setup \| \| (Unit & Func) \| \| \|
-
-\| Statement \| \| \| \| \| \| \|
-
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+ +\-\-\-\-\-\-\-\-\-\-\-\-\-\-\--+
-
-Figure 1: Capstone Project Development Process
-
-System Architecture
+2.  System Architecture
 
 The system is based on a microservices architecture to maintain
 modularity and scalability. Following is a simplified diagram of the
 system architecture.
 
-Architecture Diagram
+![](./image4.png){width="6.5in" height="4.350694444444445in"}
 
-![](./image3.png){width="6.5in" height="7.938194444444444in"}
+Figure 2.4.1: E-commerce System Architecture
 
-Figure 2: E-commerce System Architecture
+![](./image5.png){width="6.5in" height="4.538194444444445in"}
 
-Relevance and Real-world Applications
+Figure 2.4.2: E-commerce System Architecture
+
+3.  Relevance and Real-world Applications
 
 This e-commerce platform is applicable to businesses that want an online
 presence and an automated order processing system. It is beneficial:
 
-• Retail companies: Allowing global access and efficient sales.
+-   Retail companies: Allowing global access and efficient sales.
 
-• Customers: Providing a seamless, tailored shopping experience.
+-   Customers: Providing a seamless, tailored shopping experience.
 
-• Logistics: Enabling order tracking and fulfillment.
+-   Logistics: Enabling order tracking and fulfilment.
 
-• Data Analytics: Capturing customer insights through tracking user
-behavior.
+-   Data Analytics: Capturing customer insights through tracking user
+    behaviour.
 
-6\. Conclusion
+    1.  Conclusion
 
 The project will transform e-commerce by creating an effective, secure,
 and easy-to-use shopping platform. The microservices architecture allows
@@ -256,60 +203,329 @@ the application of current cloud-based technologies, this project will
 make a large contribution to internet retailing, logistics, and customer
 experience optimization.
 
-Describe the project, Outline the objectives and explain its relevance.
-
-Use Pictures, flow diagrams to illustrate the project well
-
-Use the below format as reference when including a picture
-
-![](./image4.png){width="6.5in" height="3.25in"}
-
-**Figure 1.1**: Project Development Process (Figure captions go below
-figures.)
-
 ### Requirement Gathering
 
--   Describe the requirements - Functional, Non-Functional Requirements
+2.  Functional Requirements
 
--   Describe the Users and Use Cases
+    1.  User Management
 
-    -   Include detailed Use Case Diagram / Images to illustrate
+**User Registration**
 
--   List and detail out the Feature set -
+-   The system shall allow new users to register using **email**
 
-    -   Use Tables to list out the feature set
+-   User account information should be securely stored following
+    **industry-standard encryption**.
 
-api-gateway - Entry point for routing requests to services
+**Secure Login**
 
-user-management - Handles user registration, login, etc.
+-   The system shall support **secure authentication** via
+    email-password credentials
 
-product-catalog - Manages products, categories, search, etc.
+**Profile Management**
 
-cart-service - Manages shopping carts
+-   Users shall have the ability to **view, update, and manage** their
+    personal information, including email, name, and contact details.
 
-order-management - Handles order processing, history, tracking
+-   The system shall enforce **input validation and verification
+    mechanisms** to prevent unauthorized modifications.
 
-payment-service - Manages payment processing
+**Password Management**
 
-notification-service - Sends notifications (emails/SMS)
+-   Users must be able to **reset their passwords securely** through a
+    verification link sent via email.
 
-common - Shared configurations and utilities (like Kafka configurations)
+-   The system shall enforce **strong password policies** (e.g., minimum
+    length, special characters).
 
-Use the below format as reference when including a table
+    1.  Product Catalogue
 
-**Table 1.1:** \< Table caption \> (Table captions go above tables.)
+**Product Browsing**:
 
-  ----------------------- ----------------------- -----------------------
-                                                  
+-   Users should have the ability to explore products across various
+    categories for easy discovery.
 
-                                                  
+**Product Details**:
 
-                                                  
-  ----------------------- ----------------------- -----------------------
+-   Each product page should display essential details, including
+    images, descriptions, specifications, and other relevant attributes.
 
-### Class Diagrams
+**Product Search**:
 
-Describe the Low Level Design of the Project...
+-   Users should be able to search products using keywords.
+
+    1.   Cart & Checkout
+
+**Add to Cart:**
+
+-   Users should be able to select and add products to their shopping
+    cart for future purchases.
+
+**Cart Review:**
+
+-   Users should have the ability to review selected items, including
+    quantity, price breakdown, and total cost before proceeding to
+    checkout.
+
+**Checkout**:
+
+-   The platform should provide a seamless checkout experience, allowing
+    users to specify delivery details and select preferred payment
+    methods.
+
+1.  Order Management
+
+**Order Confirmation:**
+
+-   After making a purchase, users should receive a confirmation with
+    order details.
+
+**Order History:**
+
+-   Users should be able to view their past orders.
+
+**Order Tracking:**
+
+-   Provide users with a way to track their order\'s delivery status.
+
+    1.  Payment
+
+**Multiple Payment Options:**
+
+-   The system should support multiple payment methods, including
+    credit/debit cards, online banking, and other widely used payment
+    gateways.
+
+**Secure Payment Processing:**
+
+-   Transactions should be processed securely, ensuring the
+    confidentiality and integrity of users\' financial data.
+
+**Payment Receipt:**
+
+-   After a successful transaction, users should receive a digital
+    receipt confirming their payment.
+
+    1.  Authentication
+
+**Secure Authentication:**
+
+-   Ensure that user data remains private and secure during login and
+    throughout their session.
+
+**Session Management:**
+
+-   Users should remain logged in for a specified duration or until they
+    decide to log out.
+
+    1.  Non-Functional Requirements
+
+**Security**
+
+-   Implement **Spring Security** for authentication and authorization.
+
+-   Encrypt sensitive data such as passwords using **BCrypt hashing**.
+
+-   Ensure secure authentication mechanisms, including **OAuth2 and
+    JWT-based authorization**.
+
+-   Implement **role-based access control (RBAC)** to restrict
+    unauthorized access to sensitive user data.
+
+-   Apply **rate limiting** to prevent brute-force login attacks.
+
+-   Apply **IP whitelisting** to prevent unauthorized access.
+
+-   Prevent **SQL injection, XSS, and CSRF** attacks.
+
+-   Payment data must be encrypted and comply with **PCI-DSS** security
+    standards.
+
+**Performance**
+
+-   Ensure the services can handle **at least 1000 concurrent user
+    requests** with minimal latency.
+
+-   Optimize database queries and use **caching (e.g., Redis)** for
+    frequently accessed user data.
+
+-   Implement asynchronous processing where necessary using **messaging
+    queues such as** **Kafka or RabbitMQ** to prevent blocking
+    operations.
+
+-   Product service must support **full-text search** and filtering
+    using **Elasticsearch**.
+
+**Scalability**
+
+-   Deploy in a **containerized environment (Docker, Kubernetes)** for
+    auto-scaling capabilities.
+
+**Availability & Reliability**
+
+-   Maintain **99.9% uptime** with load-balanced, multi-instance
+    deployment.
+
+-   Implement **circuit breakers** and **failover mechanisms** to handle
+    service failures gracefully.
+
+-   Provide **automated recovery mechanisms** for unexpected crashes.
+
+-   Order and Payment Service must ensure **ACID compliance** for all
+    financial transactions using a reliable RDBMS
+
+-   Implement **idempotency mechanisms** to prevent duplicate order
+    processing.
+
+**Logging**
+
+-   Enable **logging** for tracking user authentication and activity.
+
+**Maintainability**
+
+-   Implement **automated unit and integration tests** to ensure system
+    stability.
+
+```{=html}
+<!-- -->
+```
+-   Maintain **well-documented API specifications** using
+    OpenAPI/Swagger.
+
+-   Unit and integration tests should achieve at least **80% code
+    coverage**.
+
+-   Implement CI/CD pipelines using GitHub Actions/Jenkins for automated
+    deployments.
+
+-   Code should adhere to industry best practices such as **SOLID
+    principles and Design Patterns.**
+
+-   All microservices must be deployed using Kubernetes (K8s) and
+    Docker.
+
+-   Services should support multi-region deployment for disaster
+    recovery and high availability.
+
+-   Database backups must be automated daily with retention for 30 days.
+
+**Monitoring**
+
+-   Use **structured logging (ELK Stack, Prometheus, or Grafana)** for
+    system monitoring.
+
+-   Services must expose health check endpoints (/health, /metrics) for
+    monitoring via **Prometheus**.
+
+    1.  Use Case Diagram
+
+![](./image6.png){width="4.984286964129484in"
+height="4.364583333333333in"}
+
+Figure 3.1.1: E-commerce Use Case Diagram
+
+2.  Features
+
+**Table 3.4:** Features Of E-Commerce Application
+
++-----------+---------------+-----------------------------------------+
+| **        | **Feature**   | **Description**                         |
+| Service** |               |                                         |
++===========+===============+=========================================+
+| **User    | **User        | Allows new users to create an account   |
+| Man       | R             | using their email or social media       |
+| agement** | egistration** | profiles.                               |
+|           |               |                                         |
+|           |               | POST /register: Register a new user     |
++-----------+---------------+-----------------------------------------+
+|           | **User        | Enables users to securely log in using  |
+|           | Login**       | their credentials.                      |
+|           |               |                                         |
+|           |               | POST /login: Log in the user            |
++-----------+---------------+-----------------------------------------+
+|           | **Profile     | Users can view, update, and manage      |
+|           | Management**  | their personal details.                 |
+|           |               |                                         |
+|           |               | GET /profile: Retrieve user profile     |
+|           |               |                                         |
+|           |               | PUT /profile: Update profile            |
++-----------+---------------+-----------------------------------------+
+|           | **Password    | Provides users with a secure way to     |
+|           | Reset**       | reset their password via email          |
+|           |               | verification.                           |
++-----------+---------------+-----------------------------------------+
+| **Product | **Product     | Enables users to browse products across |
+| Ca        | Browsing**    | different categories.                   |
+| talogue** |               |                                         |
+|           |               | GET /products: Get products by category |
++-----------+---------------+-----------------------------------------+
+|           | **Product     | Displays product images, descriptions,  |
+|           | Details**     | specifications, and relevant details.   |
+|           |               |                                         |
+|           |               | GET /products/{id}: Get detailed view   |
+|           |               | of a product                            |
++-----------+---------------+-----------------------------------------+
+|           | **Product     | Allows users to search for products     |
+|           | Search**      | using keywords.                         |
+|           |               |                                         |
+|           |               | GET /search?query=keyword: Full-text    |
+|           |               | search on product catalog               |
++-----------+---------------+-----------------------------------------+
+| **Cart &  | **Add to      | Users can add selected products to      |
+| C         | Cart**        | their cart for future purchase.         |
+| heckout** |               |                                         |
+|           |               | POST /cart: Add item to cart            |
++-----------+---------------+-----------------------------------------+
+|           | **Cart        | Users can view their selected items,    |
+|           | Review**      | adjust quantities, and check the total  |
+|           |               | cost.                                   |
+|           |               |                                         |
+|           |               | GET /cart: Retrieve cart contents       |
+|           |               |                                         |
+|           |               | DELETE /cart/{itemId}: Remove item from |
+|           |               | cart                                    |
++-----------+---------------+-----------------------------------------+
+|           | **Checkout    | Facilitates a seamless checkout         |
+|           | Process**     | experience, including delivery and      |
+|           |               | payment selection.                      |
++-----------+---------------+-----------------------------------------+
+| **Order   | **Order       | Users receive an order confirmation     |
+| Man       | C             | with all relevant details.              |
+| agement** | onfirmation** |                                         |
+|           |               | POST /orders: Place an order            |
++-----------+---------------+-----------------------------------------+
+|           | **Order       | Users can view a list of their past     |
+|           | History**     | purchases.                              |
+|           |               |                                         |
+|           |               | GET /orders: View order history         |
++-----------+---------------+-----------------------------------------+
+|           | **Order       | Provides real-time tracking updates for |
+|           | Tracking**    | orders in transit.                      |
+|           |               |                                         |
+|           |               | GET /orders/{id}: Get order status      |
++-----------+---------------+-----------------------------------------+
+| **        | **Multiple    | Supports credit/debit cards, online     |
+| Payment** | Payment       | banking, and other payment gateways.    |
+|           | Methods**     |                                         |
++-----------+---------------+-----------------------------------------+
+|           | **Secure      | Ensures encrypted and secure payment    |
+|           | T             | processing.                             |
+|           | ransactions** |                                         |
+|           |               | POST /payment: Process payment          |
++-----------+---------------+-----------------------------------------+
+|           | **Payment     | Generates digital receipts after        |
+|           | Receipt**     | successful transactions.                |
++-----------+---------------+-----------------------------------------+
+| **Authent | **User        | Implements secure login mechanisms to   |
+| ication** | Aut           | protect user data.                      |
+|           | hentication** |                                         |
++-----------+---------------+-----------------------------------------+
+|           | **Session     | Manages user sessions with defined      |
+|           | Management**  | expiration and logout options.          |
++-----------+---------------+-----------------------------------------+
+
+### Class Diagrams {#class-diagrams .unnumbered}
+
+Describe the Low-Level Design of the Project...
 
 Provide class diagrams - Provide proper captions and follow the proper
 format for including diagrams / figures / images
@@ -317,7 +533,7 @@ format for including diagrams / figures / images
 **Tip** - Make images using draw.io and paste here following the
 guidelines for adding images / figures
 
-### Database Schema Design
+### Database Schema Design {#database-schema-design .unnumbered}
 
 Explain the **Low Level Design** of the Project in more detail by
 providing the **database schema**
@@ -462,7 +678,7 @@ Batch_type
 
 ""
 
-### Feature Development Process
+### Feature Development Process {#feature-development-process .unnumbered}
 
 Pick One key feature - Talk about its development process,
 implementation and performance optimisation / metric optimisation
@@ -489,7 +705,7 @@ For example,
 Benchmarking of response time without the optimisation and post the
 optimisation
 
-### Deployment Flow
+### Deployment Flow {#deployment-flow .unnumbered}
 
 Explain how the deployment will work via AWS (Describe the below) -
 
@@ -507,7 +723,7 @@ Explain how the deployment will work via AWS (Describe the below) -
 
 Use diagrams, images to explain better
 
-### Technologies Used
+### Technologies Used {#technologies-used .unnumbered}
 
 Kafka, MySQL, Springboot, Cloud etc...
 
@@ -525,7 +741,7 @@ Use diagrams, images to explain better
 PLAGIARIZE - Include proper references if you are quoting articles from
 the internet
 
-### Conclusion
+### Conclusion {#conclusion .unnumbered}
 
 The Conclusion should include some key points as elaborated below -
 
@@ -541,7 +757,7 @@ The Conclusion should include some key points as elaborated below -
 -   Limitations : Limitations of the technologies, cost implications and
     > suggestions for improvement
 
-## References
+## References {#references .unnumbered}
 
 Include the websites or works or the list of works referred to in a text
 or consulted by you for writing this report

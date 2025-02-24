@@ -1,0 +1,19 @@
+classDiagram
+    class User {
+        +String name
+        +String email
+        +String hashedpassword
+        +List~Role~ roles
+        +Boolean verified
+    }
+    class Role {
+        +String name
+    }
+    class Token {
+        +String value
+        +User user
+        +Date expiryAt
+    }
+
+    User "1" *-- "0..*" Role : has
+    Token --> User : associated with

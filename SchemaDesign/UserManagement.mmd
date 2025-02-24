@@ -1,19 +1,27 @@
 erDiagram
+    USER ||--o{ USER_ROLE : has
     USER {
+        int id PK
         string name
         string email UK
         string hashedPassword
         string roles
         boolean verified
     }
+    ROLE ||--o{ USER_ROLE : assigned
     ROLE {
-        string name PK
+        int id PK
+        string name UK
     }
+    TOKEN ||--o{ USER : generates
     TOKEN {
-        string value PK
-        string user FK
+        int id PK
+        string value
+        string user_id FK
         datetime expiryAt
     }
-    USER ||--o{ TOKEN : generates
-    USER ||--o{ ROLE : has
-    ROLE ||--o{ USER : assignedTo
+    USER_ROLE {
+        int id PK
+        string user_id FK
+        string role_id FK
+    }

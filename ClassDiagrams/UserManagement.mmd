@@ -1,29 +1,39 @@
 classDiagram
-  class User {
-      -String name
-      -String email
-      -String hashedPassword
-      -List<Role> roles
-      -bool verified
-      +register()
-      +login()
-      +logout()
-      +verify()
-  }
-  
-  class Role {
-      -String name
-      +assignToUser(user)
-      +removeFromUser(user)
-  }
-  
-  class Token {
-      -String value
-      -User user
-      -Date expiryAt
-      +generateToken()
-      +validateToken()
-  }
-  
-  User "1" --> "*" Role : has
-  User "1" --> "0..1" Token : generates
+    class User {
+        +Long id
+        +String name
+        +String email
+        +String hashedPassword
+        +boolean verified
+        +List<Role> roles
+        +register()
+        +login()
+        +logout()
+        +verify()
+    }
+    
+    class Role {
+        +Long id
+        +String name
+        +assignToUser(user)
+        +removeFromUser(user)
+    }
+    
+    class Token {
+        +Long id
+        +String value
+        +Date expiryAt
+        +Long userId
+        +generateToken()
+        +validateToken()
+    }
+    
+    class User_Role {
+        +Long id
+        +Long userId
+        +Long roleId
+    }
+    
+    User "1" --o "0..*" Token : has
+    User "1" --o "0..*" User_Role : assigned
+    Role "1" --o "0..*" User_Role : mapped

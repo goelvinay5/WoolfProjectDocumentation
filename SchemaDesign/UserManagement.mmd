@@ -1,0 +1,19 @@
+erDiagram
+    USER {
+        string name
+        string email UK
+        string hashedPassword
+        string roles
+        boolean verified
+    }
+    ROLE {
+        string name PK
+    }
+    TOKEN {
+        string value PK
+        string user FK
+        datetime expiryAt
+    }
+    USER ||--o{ TOKEN : generates
+    USER ||--o{ ROLE : has
+    ROLE ||--o{ USER : assignedTo

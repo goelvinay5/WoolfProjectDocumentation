@@ -1,0 +1,53 @@
+classDiagram
+    class Product {
+        +Long id
+        +String title
+        +String description
+        +double price
+        +int stockQuantity
+        +double rating
+    }
+    
+    class Category {
+        +Long id
+        +String name
+    }
+
+    class Order {
+        +Long id
+        +double totalAmount
+        +String paymentMethod
+        +String paymentStatus
+        +String orderStatus
+    }
+    
+    class OrderItem {
+        +Long id
+        +int quantity
+        +double priceAtPurchase
+    }
+
+    class Cart {
+        +Long id
+        +double totalPrice
+    }
+
+    class CartItem {
+        +Long id
+        +int quantity
+    }
+
+    class User {
+        +Long id
+        +String name
+    }
+
+    Product "1" --o "0..*" OrderItem : "included in"
+    Product "1" --o "0..*" CartItem : "added to"
+    Category "1" --o "0..*" Product : "categorizes"
+    Order "1" --o "0..*" OrderItem : "contains"
+    Order "1" --o "1" User : "placed by"
+    Cart "1" --o "1" User : "belongs to"
+    Cart "1" --o "0..*" CartItem : "contains"
+    CartItem "1" --o "1" Product : "references"
+    OrderItem "1" --o "1" Product : "references"

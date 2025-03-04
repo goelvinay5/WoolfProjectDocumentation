@@ -1,0 +1,58 @@
+erDiagram
+    USER {
+        Long id PK
+        String name
+    }
+
+    CATEGORY {
+        Long id PK
+        String name
+    }
+
+    PRODUCT {
+        Long id PK
+        String title
+        String description
+        double price
+        int stockQuantity
+        double rating
+        Long category_id FK
+    }
+
+    ORDER {
+        Long id PK
+        double totalAmount
+        String paymentMethod
+        String paymentStatus
+        String orderStatus
+        Long user_id FK
+    }
+
+    ORDER_ITEM {
+        Long id PK
+        int quantity
+        double priceAtPurchase
+        Long order_id FK
+        Long product_id FK
+    }
+
+    CART {
+        Long id PK
+        double totalPrice
+        Long user_id FK
+    }
+
+    CART_ITEM {
+        Long id PK
+        int quantity
+        Long cart_id FK
+        Long product_id FK
+    }
+
+    CATEGORY ||--o{ PRODUCT : "has"
+    USER ||--o{ ORDER : "places"
+    ORDER ||--o{ ORDER_ITEM : "contains"
+    PRODUCT ||--o{ ORDER_ITEM : "is ordered in"
+    USER ||--o{ CART : "owns"
+    CART ||--o{ CART_ITEM : "contains"
+    PRODUCT ||--o{ CART_ITEM : "added in"

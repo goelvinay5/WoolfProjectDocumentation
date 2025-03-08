@@ -6,7 +6,7 @@ graph TD
     B -->|Routes Requests| E[Order Service]
     B -->|Routes Requests| F[Payment Service]
 
-    C -->|Auth Data| G[AWS RDS (MySQL)]
+    C -->|Auth Data| G[AWS RDS - MySQL]
     D -->|Product Data| G
     E -->|Order Data| G
     F -->|Payment Data| G
@@ -16,7 +16,7 @@ graph TD
     E -->|Event Processing| I[Apache Kafka]
     F -->|Transaction Logs| I
     
-    G -->|Session & Cart Caching| J[ElastiCache (Redis)]
+    G -->|Session & Cart Caching| J[ElastiCache - Redis]
 
     F -->|Store Payment Receipts| K[AWS S3]
     D -->|Store Product Images| K

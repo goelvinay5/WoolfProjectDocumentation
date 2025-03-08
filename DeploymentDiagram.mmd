@@ -1,0 +1,30 @@
+graph TD
+    A[User Requests] -->|API Call| B[AWS API Gateway & ALB]
+    
+    B -->|Routes Requests| C[Auth Service]
+    B -->|Routes Requests| D[Product Service]
+    B -->|Routes Requests| E[Order Service]
+    B -->|Routes Requests| F[Payment Service]
+
+    C -->|Auth Data| G[AWS RDS (MySQL)]
+    D -->|Product Data| G
+    E -->|Order Data| G
+    F -->|Payment Data| G
+
+    D -->|Full-text Search| H[Elasticsearch]
+    
+    E -->|Event Processing| I[Apache Kafka]
+    F -->|Transaction Logs| I
+    
+    G -->|Session & Cart Caching| J[ElastiCache (Redis)]
+
+    F -->|Store Payment Receipts| K[AWS S3]
+    D -->|Store Product Images| K
+
+    subgraph Cloud Infrastructure
+        G
+        H
+        I
+        J
+        K
+    end

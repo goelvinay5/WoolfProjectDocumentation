@@ -1,27 +1,35 @@
 erDiagram
-    USER ||--o{ USER_ROLE : has
     USER {
-        int id PK
-        string name
-        string email UK
-        string hashedPassword
-        string roles
-        boolean verified
+        Long id PK
+        String name
+        String email
+        String hashedPassword
+        String resetPasswordQuestion
+        String resetPasswordAnswer
     }
-    ROLE ||--o{ USER_ROLE : assigned
+    
     ROLE {
-        int id PK
-        string name UK
+        Long id PK
+        String name
     }
-    TOKEN ||--o{ USER : generates
+    
+    ADDRESS {
+        Long id PK
+        String street
+        String city
+        String state
+        String zipcode
+        String country
+    }
+    
     TOKEN {
-        int id PK
-        string value
-        string user_id FK
-        datetime expiryAt
+        Long id PK
+        String tokenValue
+        Date expiryDate
+        Long userId FK
     }
-    USER_ROLE {
-        int id PK
-        string user_id FK
-        string role_id FK
-    }
+    
+    USER ||--o{ ROLE : has
+    USER ||--|| ADDRESS : has
+    USER ||--o{ TOKEN : has
+    TOKEN }o--|| USER : belongs_to

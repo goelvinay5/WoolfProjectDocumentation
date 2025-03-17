@@ -1,39 +1,46 @@
 classDiagram
+    class Role {
+        +Long id
+        +String name
+        +addRole(Long id, String roleName)
+        +removeRole(Long id, String roleName)
+    }
+
+    class Address {
+        +Long id
+        +String street
+        +String city
+        +String state
+        +String zipcode
+        +String country
+    }
+
+    class Token {
+        +Long id
+        +String tokenValue
+        +Date expiryDate
+	+generateToken(User user)
+    }
+
     class User {
         +Long id
         +String name
         +String email
         +String hashedPassword
-        +boolean verified
         +List<Role> roles
-        +register()
-        +login()
-        +logout()
-        +verify()
+        +Address address
+        +String resetPasswordQuestion
+        +String resetPasswordAnswer
+        +signup(String email, String password)
+        +getAllUsers()
+        +getUsersByEmail(String email)
+        +getResetPasswordQuestion(String email)
+        +resetPassword(String email, String resetPasswordQuestion, String resetPasswordAnswer, String newPassword)
+        +updateUser(Long id, Map<String, Object> updates)
+        +deleteUser(String email)
     }
-    
-    class Role {
-        +Long id
-        +String name
-        +assignToUser(user)
-        +removeFromUser(user)
-    }
-    
-    class Token {
-        +Long id
-        +String value
-        +Date expiryAt
-        +Long userId
-        +generateToken()
-        +validateToken()
-    }
-    
-    class User_Role {
-        +Long id
-        +Long userId
-        +Long roleId
-    }
-    
-    User "1" --o "0..*" Token : has
-    User "1" --o "0..*" User_Role : assigned
-    Role "1" --o "0..*" User_Role : mapped
+
+    User "1" -- "*" Role : has
+    User "1" -- "1" Address : has
+    User "1" -- "*" Token : has
+    Token "*" -- "1" User : belongs to

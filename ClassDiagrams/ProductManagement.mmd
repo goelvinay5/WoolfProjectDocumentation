@@ -1,4 +1,77 @@
 classDiagram
+    class Cart {
+        +Long id
+        +List<CartItem> products
+        +User user
+        +double totalPrice
+        +addItemsToCart(Long userId, Long productId, int quantity)
+        +getCartItems(Long userId)
+        +removeItemsFromCart(Long userId, Long cartItemId)
+        +updateItemQuantityInCart(Long userId, Long cartItemId, int updateQuantity)
+        +clearCart(Long userId)
+        +calculateCartTotal(Cart cart)
+    }
+    
+    class CartItem {
+        +Long id
+        +Product product
+        +int quantity
+        +Cart cart
+    }
+    
+    class Order {
+        +Long id
+        +List<OrderItem> orderItems
+        +User user
+        +double totalAmount
+        +PaymentMethod paymentMethod
+        +PaymentStatus paymentStatus
+        +OrderStatus orderStatus
+        +String trackingNumber
+        +String transactionId
+        +placeOrder(Long userId)
+        +confirmPayment(String transactionId)
+        +getOrder(Long orderId)
+        +getAllOrders(Long userId, OrderStatus status)
+        +cancelOrder(Long orderId)
+    }
+    
+    class OrderItem {
+        +Long id
+        +Product product
+        +Order order
+        +int quantity
+        +double priceAtPurchase
+    }
+    
+    class OrderStatus {
+        <<enumeration>>
+        PENDING
+        PLACED
+        CANCELLED
+        FAILED
+    }
+    
+    class PaymentMethod {
+        <<enumeration>>
+        ONLINE
+        OFFLINE
+    }
+    
+    class PaymentStatus {
+        <<enumeration>>
+        PENDING
+        PAID
+        FAILED
+        REFUNDED
+        CANCELLED
+    }
+    
+    class Category {
+        +Long id
+        +String name
+    }
+    
     class Product {
         +Long id
         +String title
@@ -6,48 +79,37 @@ classDiagram
         +double price
         +int stockQuantity
         +double rating
+        +Category category
+        +createProduct(String title, String description, double price, int stockQuantity, double rating, String category)
+        +getAllProducts()
+        +getProductById(Long id)
+        +updateProduct(Long id, Map<String, Object> updates)
+        +deleteProduct(Long id)
     }
     
-    class Category {
-        +Long id
-        +String name
-    }
-
-    class Order {
-        +Long id
-        +double totalAmount
-        +String paymentMethod
-        +String paymentStatus
-        +String orderStatus
-    }
-    
-    class OrderItem {
-        +Long id
-        +int quantity
-        +double priceAtPurchase
-    }
-
-    class Cart {
-        +Long id
-        +double totalPrice
-    }
-
-    class CartItem {
-        +Long id
-        +int quantity
-    }
-
     class User {
         +Long id
         +String name
+        +String email
+        +String address
+        +List<String> roles
+        +Cart cart
     }
-
-    Product "1" --o "0..*" OrderItem : "included in"
-    Product "1" --o "0..*" CartItem : "added to"
-    Category "1" --o "0..*" Product : "categorizes"
-    Order "1" --o "0..*" OrderItem : "contains"
-    Order "1" --o "1" User : "placed by"
-    Cart "1" --o "1" User : "belongs to"
-    Cart "1" --o "0..*" CartItem : "contains"
-    CartItem "1" --o "1" Product : "references"
-    OrderItem "1" --o "1" Product : "references"
+    
+    Cart "1" -- "*" CartItem : has
+    Cart "1" -- "1" User : belongs_to
+    CartItem "*" -- "1" Product : contains
+    CartItem "*" -- "1" Cart : belongs_to
+    
+    Order "1" -- "*" OrderItem : has
+    Order "1" -- "1" User : placed_by
+    OrderItem "*" -- "1" Product : contains
+    OrderItem "*" -- "1" Order : belongs_to
+    
+    Order --> OrderStatus
+    Order --> PaymentMethod
+    Order --> PaymentStatus
+    
+    Product "*" -- "1" Category : belongs_to
+    
+    User "1" -- "1" Cart : owns

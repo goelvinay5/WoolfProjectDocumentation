@@ -1,0 +1,11 @@
+classDiagram
+    class Email {
+        +Long id
+        +String to
+        +String from
+        +String subject
+        +String body
+    }
+    
+    Email : +sendEmail(String to, String subject, String body)
+    Email : +getEmailById(Long id)

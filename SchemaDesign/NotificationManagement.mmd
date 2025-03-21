@@ -1,0 +1,11 @@
+erDiagram
+    EMAIL {
+        Long id PK
+        String to
+        String from
+        String subject
+        String body
+    }
+    
+    EMAIL ||--o| USER : "sent by"
+    

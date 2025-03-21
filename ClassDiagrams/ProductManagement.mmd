@@ -28,9 +28,13 @@ classDiagram
         +PaymentStatus paymentStatus
         +OrderStatus orderStatus
         +String trackingNumber
-        +String transactionId
+        +String invoiceNumber
+        +String paymentOrderId
+        +String paymentLink
+        +String paymentId
+        +String refundId
         +placeOrder(Long userId)
-        +confirmPayment(String transactionId)
+        +confirmPayment(Long userId, String paymentOrderId)
         +getOrder(Long orderId)
         +getAllOrders(Long userId, OrderStatus status)
         +cancelOrder(Long orderId)

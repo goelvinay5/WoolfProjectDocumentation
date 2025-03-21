@@ -1,0 +1,18 @@
+classDiagram
+    class Order {
+        +Long Id
+        +String orderId
+        +String paymentId
+        +String refundId
+        +String status
+        +Double amount
+        +String currency
+        +String invoiceNumber
+        +createPaymentLink(Double amount, String currency, String invoiceNumber)
+        +getPaymentDetails(String orderId) 
+        +fetchPaymentStatus_Razorpay(String paymentId)
+        +verifySignature(String razorpay_payment_id, String razorpay_payment_link_id, String razorpay_payment_link_reference_id, String razorpay_payment_link_status, String razorpay_signature)
+        +updatePaymentDetails(String razorpay_payment_id, String razorpay_payment_link_id, String razorpay_payment_link_reference_id, String razorpay_payment_link_status, String razorpay_signature)
+        +createRefund(String orderId) 
+        +fetchRefundStatus(String refundId)
+    }

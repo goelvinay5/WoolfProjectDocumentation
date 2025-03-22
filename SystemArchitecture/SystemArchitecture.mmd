@@ -1,28 +1,22 @@
 graph TD;
-    A[API Gateway] -->|Routes Requests| B[Cart Service];
-    A --> C[Order Management Service];
-    A --> D[Product Catalog Service];
-    A --> E[Payment Service];
-    A --> F[Notification Service];
-    
-    B -->|Uses| G[MongoDB];
-    C -->|Uses| H[MySQL];
-    D -->|Uses| I[Elasticsearch];
-    E -->|Sends Events| J[Kafka Message Broker];
-    F -->|Emails| K[Amazon SES];
-
-    subgraph Load Balancers
-        L[ELB]
+    A[Client] --> |Routes Requests| B[User Service];    
+    A --> |Routes Requests| C[Product Service];    
+    C --> |Routes Requests| D[Payment Service];    
+    B -->|Uses| G[MySQL];
+    C -->|Uses| G;
+    D -->|Uses| G;
+    E[Notification Service] -->|Sends Events| J[Kafka Message Broker];
+        
+    subgraph Client
+        A
     end
-    L --> A;
 
     subgraph Caching
         M[Redis]
     end
-    M --> B;
+    M --> C;
 
-    subgraph Databases
-        H;
+    subgraph Databases        
         G;
     end
 
@@ -30,5 +24,5 @@ graph TD;
         J;
     end
 
-    J -->|Publishes| C;
+    C -->|Publishes| J;
     J -->|Subscribes| E;
